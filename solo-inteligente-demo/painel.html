@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Meus laudos · Solo Inteligente</title>
+    <meta name="description" content="Envie o laudo do seu solo e receba um relatório simples: nutrientes, culturas compatíveis e o que fazer.">
+    <meta name="theme-color" content="#1E4D2B">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:wght@600;700&display=swap">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="pagina-painel">
+<main id="conteudo">
+
+<section class="secao">
+    <div class="container">
+        <h1 class="titulo">Meus laudos</h1>
+        <p class="lead-suave">Olá, <span id="nome-usuario"></span>! Envie um laudo novo ou abra um relatório pronto.</p>
+
+        <div class="painel-grid">
+            <!-- Envio -->
+            <div class="card envio" id="envio">
+                <h2 class="subtitulo">Enviar novo laudo</h2>
+                <noscript><div class="alerta alerta-erro"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-alert"/></svg><div>Ative o JavaScript do navegador para usar a demonstração.</div></div></noscript>
+
+                <form id="form-envio" novalidate data-max-bytes="8388608">
+                    <input class="oculto-visual" type="file" id="laudo" name="laudo"
+                           accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png">
+                    <label class="zona-envio" for="laudo" data-zona>
+                        <span class="bloco-icone"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-upload"/></svg></span>
+                        <strong>Toque para escolher o arquivo</strong>
+                        <span class="legenda">PDF, JPG ou PNG, até 8 MB</span>
+                        <span class="btn btn-acao">Escolher arquivo</span>
+                    </label>
+                    <p class="dica-foto legenda"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-info"/></svg> Dica para foto: papel inteiro, boa luz e sem sombra.</p>
+
+                    <div class="envio-detalhes" data-detalhes hidden>
+                        <div class="arquivo-escolhido">
+                            <span class="bloco-icone"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-file"/></svg></span>
+                            <div class="arquivo-info">
+                                <strong data-arq-nome></strong>
+                                <span class="legenda" data-arq-tam></span>
+                            </div>
+                            <button type="button" class="btn btn-contorno btn-pequeno" data-remover>Remover</button>
+                        </div>
+
+                        <div class="campo">
+                            <label class="campo-rotulo" for="nome_area">Nome da área <span class="legenda">(opcional)</span></label>
+                            <input class="campo-input" id="nome_area" name="nome_area" type="text" maxlength="80" placeholder="Ex.: Talhão Norte">
+                        </div>
+
+                        <div class="alerta alerta-erro" role="alert" data-erro-cliente hidden><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-alert"/></svg><div data-erro-texto></div></div>
+
+                        <div class="progresso" data-progresso hidden>
+                            <div class="progresso-trilho"><span class="progresso-barra" data-barra></span></div>
+                            <p class="legenda" data-progresso-msg aria-live="polite">Lendo o laudo…</p>
+                        </div>
+
+                        <button type="submit" class="btn btn-acao btn-cheio" data-enviar>Enviar laudo</button>
+                    </div>
+                </form>
+
+                <div class="exemplo">
+                    <p class="legenda">Sem laudo à mão? Veja como funciona com um exemplo (não precisa de internet).</p>
+                    <button type="button" class="btn btn-contorno btn-cheio" id="usar-exemplo">Testar com um laudo de exemplo</button>
+                </div>
+            </div>
+
+            <!-- Lista -->
+            <div>
+                <div class="lista-laudos" id="lista-laudos"></div>
+                <p class="legenda reset-demo"><button type="button" class="link-botao" id="restaurar-demo">Restaurar os dados de demonstração</button></p>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+
+<script src="assets/js/dados.js"></script>
+<script src="assets/js/analise.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/painel.js"></script>
+<script src="assets/js/efeitos.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Entrar · Solo Inteligente</title>
+    <meta name="description" content="Envie o laudo do seu solo e receba um relatório simples: nutrientes, culturas compatíveis e o que fazer.">
+    <meta name="theme-color" content="#1E4D2B">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:wght@600;700&display=swap">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="pagina-auth">
+<main id="conteudo">
+
+<div class="auth">
+    <aside class="auth-lateral">
+        <span class="bloco-icone bloco-icone-claro"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-sprout"/></svg></span>
+        <h2 class="subtitulo">Bem-vindo(a) à demonstração</h2>
+        <p>Entre com a conta fictícia para ver como o sistema funciona: enviar um laudo, conferir os números e receber o relatório.</p>
+    </aside>
+    <section class="auth-form">
+        <h1 class="titulo">Entrar</h1>
+        <p class="lead-suave">Use a conta de demonstração.</p>
+
+        <div class="alerta alerta-erro" id="erro-geral" role="alert" hidden><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-alert"/></svg><div data-texto></div></div>
+
+        <form id="form-login" novalidate>
+            <div class="campo" data-campo="email">
+                <label class="campo-rotulo" for="f-email">E-mail</label>
+                <input class="campo-input" id="f-email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="120" placeholder="maria@email.com">
+            </div>
+            <div class="campo" data-campo="senha">
+                <label class="campo-rotulo" for="f-senha">Senha</label>
+                <div class="senha-wrap">
+                    <input class="campo-input" id="f-senha" name="senha" type="password" autocomplete="current-password">
+                    <button type="button" class="senha-botao" data-mostrar-senha aria-controls="f-senha">Mostrar</button>
+                </div>
+            </div>
+            <button class="btn btn-acao btn-cheio" type="submit">Entrar</button>
+        </form>
+
+        <div class="credenciais">
+            <p><strong>Conta de demonstração</strong></p>
+            <dl>
+                <dt>E-mail</dt><dd id="conta-email"></dd>
+                <dt>Senha</dt><dd id="conta-senha"></dd>
+            </dl>
+            <button type="button" class="btn btn-contorno btn-cheio" id="preencher-demo">Entrar com a conta de demonstração</button>
+        </div>
+    </section>
+</div>
+</main>
+
+<script src="assets/js/dados.js"></script>
+<script src="assets/js/analise.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/login.js"></script>
+<script src="assets/js/efeitos.js"></script>
+</body>
+</html>
